@@ -6,7 +6,7 @@ namespace Tutorial8.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ClientsController : Controller
+public class ClientsController : ControllerBase
 {
     private readonly IClientsService _clientsService;
 
@@ -14,11 +14,7 @@ public class ClientsController : Controller
     {
         _clientsService = clientsService;
     }
-    // GET
-    public IActionResult Index()
-    {
-        return View();
-    }
+   
     
     [HttpGet("{id}/trips")]
     public async Task<IActionResult> GetClient(int id)
